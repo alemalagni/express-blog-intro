@@ -42,6 +42,13 @@ app.get( '/', (req, res) => {
         .send( `<p>Server del mio blog</p>` )
 })
 
+app.get( '/bacheca', (req, res) => {
+    const num = parseInt(Math.random() * 5);
+
+    res.type("html")
+        .send( `<h3>${post[num].titolo}</h3>\n <div><img src="${post[num].immagine}"></div>\n <p>${post[num].tag}</p>\n <p>${post[num].contenuto}</p>\n ` )
+})
+
 app.listen( port, () => {
     console.log( `Example app listening on port ${port}` )
 })

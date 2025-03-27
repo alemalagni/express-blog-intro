@@ -37,6 +37,12 @@ const post = [
     }
 ];
 
+function showTags(num) {
+    for ( let i = 0; i < post[num].tags.length; i++ ){
+        return post[num].tags[i];
+    }
+}
+
 app.get( '/', (req, res) => {
     res.type("html")
         .send( `<p>Server del mio blog</p>` )
@@ -46,7 +52,12 @@ app.get( '/bacheca', (req, res) => {
     const num = parseInt(Math.random() * 5);
 
     res.type("html")
-        .send( `<h3>${post[num].titolo}</h3>\n <div><img src="${post[num].immagine}"></div>\n <p>${post[num].tag}</p>\n <p>${post[num].contenuto}</p>\n ` )
+        .send( `
+                <h3>${post[num].titolo}</h3>
+                <div><img src="${post[num].immagine}"></div>
+                <p>${showTags(num)}</p>
+                <p>${post[num].contenuto}</p>
+                ` )
 })
 
 app.listen( port, () => {

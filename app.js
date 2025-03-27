@@ -8,7 +8,7 @@ const post = [
     {
     titolo: "titolo 1",
     contenuto: "contenuto 1",
-    immagine: "",
+    immagine: "images/ciambellone.jpeg",
     tags: []
     }
 ];

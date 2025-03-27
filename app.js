@@ -3,7 +3,14 @@ const app = express()
 const port = 3000
 
 //app.use( express.static( 'images' ) );
-const post = [];
+const post = [
+    {
+    titolo: "titolo 1",
+    contenuto: "contenuto 1",
+    immagine: "",
+    tags: []
+    }
+];
 
 app.get( '/', (req, res) => {
     res.type("html")

@@ -7,3 +7,6 @@ app.get( '/', (req, res) => {
         .send( `<p>Server del mio blog</p>` )
 })
 
+app.listen( port, () => {
+    console.log( `Example app listening on port ${port}`)
+})
